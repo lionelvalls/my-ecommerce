@@ -1,0 +1,73 @@
+[{
+        "id": 1,
+        "image": "https://www.autoluna.com.ar/wp-content/uploads/2023/06/WhatsApp-Image-2023-06-10-at-10.20.56-1-798x466.jpeg",
+        "title": "TOYOTA COROLLA HIBRID 0KM",
+        "price": 26900,
+        "category": "Nuevos"
+
+    },
+    {
+        "id": 2,
+        "image": "https://www.autoluna.com.ar/wp-content/uploads/2023/05/WhatsApp-Image-2023-05-24-at-18.14.02-798x466.jpeg",
+        "title": "MERCEDES BENZ CLA 200 0KM",
+        "price": 25500,
+        "category": "Nuevos"
+
+    },
+    {
+        "id": 3,
+        "image": "https://www.autoluna.com.ar/wp-content/uploads/2023/05/WhatsApp-Image-2023-05-22-at-21.41.48-798x466.jpeg",
+        "title": "FIAT CRONOS PRECISION 1.8 0KM",
+        "price": 7300000,
+        "category": "Nuevos"
+
+    },
+    {
+        "id": 4,
+        "image": "https://www.autoluna.com.ar/wp-content/uploads/2023/05/WhatsApp-Image-2023-05-22-at-21.43.43-798x466.jpeg",
+        "title": "TOYOTA SW4 SRV 4X4 7 AS 0KM",
+        "price": 12000000,
+        "category": "Nuevos"
+
+    },
+    {
+        "id": 5,
+        "image": "https://www.autoluna.com.ar/wp-content/uploads/2023/05/994d127f-e9ee-4155-a2fa-8a05398e8ed0-798x466.jpg",
+        "title": "Ford Kuga Trend 2010",
+        "price": 4950000,
+        "category": "Usados"
+
+    },
+    {
+        "id": 6,
+        "image": "https://www.autoluna.com.ar/wp-content/uploads/2023/05/WhatsApp-Image-2023-05-15-at-18.48.23-1-798x466.jpeg",
+        "title": "Renault Fluence Luxe 2.0 2012",
+        "price": 3100000,
+        "category": "Usados"
+
+    },
+    {
+        "id": 7,
+        "image": "https://www.autoluna.com.ar/wp-content/uploads/2023/05/WhatsApp-Image-2023-05-09-at-11.28.48-798x466.jpeg",
+        "title": "Fiat Qubo Active 2012",
+        "price": 2990000,
+        "category": "Usados"
+
+    },
+    {
+        "id": 8,
+        "image": "https://www.autoluna.com.ar/wp-content/uploads/2023/02/b46e4943-8274-446e-9865-409a86418ded-798x466.jpg",
+        "title": "CHEVROLET ONIX PLUS LS JOY 1.4 2020",
+        "price": 2004357,
+        "category": "Usados"
+
+    },
+    {
+        "id": 9,
+        "image": "https://www.autoluna.com.ar/wp-content/uploads/2023/01/599838a3-d4be-41df-95ec-56b0fd852aa2-798x466.jpg",
+        "title": "MERCEDES BENZ 220 1951",
+        "price": 22000,
+        "category": "Usados"
+
+    }
+]
