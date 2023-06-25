@@ -1,31 +1,37 @@
 .header {
-    background-color: rgb(30, 0, 255);
+    background-color: #f2f2f2;
+    padding: 20px;
 }
 
 .header__container {
-    max-width: 1100px;
-    margin: 0 auto;
-    padding: 20px 0;
     display: flex;
-    justify-content: space-between;
     align-items: center;
-}
-
-.header__logo {
-    font-size: 30px;
-    font-weight: 200;
-    color: white;
 }
 
 .header__nav {
     display: flex;
-    gap: 20px;
     align-items: center;
+    margin-left: auto;
+}
+
+.header__nav h3 {
+    margin-right: 20px;
 }
 
 .categorias {
-    color: white;
-    font-size: 18px;
-    text-transform: uppercase;
+    display: flex;
+    align-items: center;
+    margin-right: 20px;
+}
+
+.Option {
+    margin-right: 10px;
+    color: #333;
     text-decoration: none;
+}
+
+.ActiveOption {
+    margin-right: 10px;
+    color: #333;
+    text-decoration: underline;
 }
