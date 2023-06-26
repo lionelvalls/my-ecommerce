@@ -1,14 +1,10 @@
 import React from "react";
-import { useState, useEffect } from "react";
-import { getProductById } from "../../asyncMock";
 import ItemCount from '../ItemCount';
-import ItemDetail from "../ItemDetail";
 
 
-
-   const Item = ({id, image, title, price, category }) => {
+   const ItemDetail = ({id, image, title, price, category }) => {
         return (
-            <article className='CardItem'>
+             <article className='CardItem'>
                 <header className='Header'>
                     <h2 className='ItemHeader'>
                         {title}
@@ -26,6 +22,7 @@ import ItemDetail from "../ItemDetail";
                     Condicion: {category}
                 </p>
             </section>
+
             <footer className='ItemFooter'>
                 <ItemCount initial={1} stock={10} onAdd={(quantity) => console.log('Cantidad agregada ' ,quantity)}/>
             </footer>
