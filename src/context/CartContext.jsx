@@ -12,7 +12,11 @@ export const CartProvider = ({ children }) => {
 
   const addItem = (item, quantity) => {
     if (!isInCart(item.id)) {
-      setCart(prev => [...prev, { ...item, quantity }]);
+
+      const newItem = {...item, quantity }
+      const newCart = [...cart, newItem];
+
+      setCart(newCart);
     } else {
       console.error('El producto ya fue agregado');
     }
