@@ -1,32 +1,53 @@
 import { useState, useEffect } from 'react';
-import { getProducts, getProductByCategory } from '../../asyncMock';
-import ItemList from '../ItemList'
-import { useParams } from 'react-router-dom';
-import { useSearchParams } from 'react-router-dom'
+import { getDocs, collection, query, where } from 'firebase/firestore';
+import { db } from '../../services/firebase/firebaseConfig';
+import ItemList from '../ItemList';
 
-const ItemListContainer = () => {
+const ItemListContainer = ({ categoryId}) => {
+  const [products, setProducts] = useState([]);
+  const [loading, setLoading] = useState(true);
 
-    const [products, setProducts] = useState([])
-    
-    const { categoryId } = useParams()
+  const asyncFunc = async (categoryId) => {
+    try {
+      const productsRef = collection(db, 'productos');
+      const q = query(productsRef, where('category', '==', categoryId));
+      const querySnapshot = await getDocs(q);
 
-    useEffect(() => {
-        const asyncFunc = categoryId ? getProductByCategory : getProducts
-        
-        asyncFunc(categoryId)
-        .then(response => {
-            setProducts(response)
-        })
-        .catch(error => { 
-            console.error(error)
-        })
-    },[categoryId])
- 
-    return (
-        <div>
-            <h1>Welcome</h1>
-            <ItemList products={products}/>
-        </div>
-    )
-}    
+      const products = [];
+      querySnapshot.forEach((doc) => {
+        products.push({ id: doc.id, ...doc.data() });
+      });
+
+      return products;
+    } catch (error) {
+      throw new Error('Error retrieving products from Firebase: ' + error.message);
+    }
+  };
+
+  useEffect(() => {
+    setLoading(true);
+
+    asyncFunc(categoryId)
+      .then((response) => {
+        setProducts(response);
+        setLoading(false);
+      })
+      .catch((error) => {
+        console.error(error);
+        setLoading(false);
+      });
+  }, [categoryId]);
+
+  return (
+    <div>
+      <h1>Welcome</h1>
+      {loading ? (
+        <p>Loading...</p>
+      ) : (
+        <ItemList products={products} />
+      )}
+    </div>
+  );
+};
+
 export default ItemListContainer;

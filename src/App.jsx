@@ -14,7 +14,7 @@ function App() {
       <CartProvider>
         <NavBar/>
         <Routes>
-          <Route path='/' element={<ItemListContainer/>}/>
+          <Route path='/' element={<ItemListContainer categoryId={null} />} />
           <Route path='/category/:categoryId' element={<ItemListContainer/>}/>
           <Route path='/item/:itemId' element={ <ItemDetailContainer/>}/>
           <Route path='/cart' element={<Cart />}/>
