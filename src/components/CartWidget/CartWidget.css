@@ -1,0 +1,35 @@
+/* CartWidget.css */
+
+.CartWidget {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: #333;
+    font-size: 16px;
+    padding: 8px 12px;
+    background-color: #007bff;
+    border-radius: 50%;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+}
+
+.CartImg {
+    width: 24px;
+    height: 24px;
+    margin-right: 8px;
+}
+
+
+/* Estilos cuando el carrito está vacío */
+
+.CartWidget.empty {
+    display: none;
+}
+
+
+/* Estilos para cuando el carrito tiene elementos */
+
+.CartWidget.hasItems {
+    display: flex;
+}

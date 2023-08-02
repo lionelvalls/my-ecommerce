@@ -6,12 +6,12 @@ import { useParams } from 'react-router-dom';
 
 const ItemDetailContainer = () => {
   const [product, setProduct] = useState(null);
-  const { itemId } = useParams();
+  const { itemId } = useParams(true);
 
   useEffect(() => {
     const fetchProduct = async () => {
       try {
-        const productRef = doc(db, 'productos', itemId); // Actualiza el nombre de la colección a "productos"
+        const productRef = doc(db, 'productos', itemId);
         const docSnapshot = await getDoc(productRef);
 
         if (docSnapshot.exists()) {

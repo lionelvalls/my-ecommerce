@@ -17,8 +17,8 @@ export const NavBar = () => {
                         <h3>Vehiculos</h3>
                     </Link>
                     <div className="categorias">
-                        <NavLink to={"/Category/Usados"} className={({isActive}) => isActive ? 'ActiveOption': 'Option'}>Usados</NavLink>
-                        <NavLink to={"/Category/Nuevos"} className={({isActive}) => isActive ? 'ActiveOption': 'Option'}>Nuevos</NavLink>
+                        <NavLink to={"/Category/usados"} className={({isActive}) => isActive ? 'ActiveOption': 'Option'}>Usados</NavLink>
+                        <NavLink to={"/Category/nuevos"} className={({isActive}) => isActive ? 'ActiveOption': 'Option'}>Nuevos</NavLink>
                     </div>
                     <CartWidget />  
                 </nav>

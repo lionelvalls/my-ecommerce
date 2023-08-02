@@ -1,42 +1,29 @@
 import { useState, useEffect } from 'react';
+import { useParams } from 'react-router-dom'
 import { getDocs, collection, query, where } from 'firebase/firestore';
 import { db } from '../../services/firebase/firebaseConfig';
 import ItemList from '../ItemList';
+import './ItemListContainer.css';
 
-const ItemListContainer = ({ categoryId}) => {
+const ItemListContainer = () => {
   const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(true);
-
-  const asyncFunc = async (categoryId) => {
-    try {
-      const productsRef = collection(db, 'productos');
-      const q = query(productsRef, where('category', '==', categoryId));
-      const querySnapshot = await getDocs(q);
-
-      const products = [];
-      querySnapshot.forEach((doc) => {
-        products.push({ id: doc.id, ...doc.data() });
-      });
-
-      return products;
-    } catch (error) {
-      throw new Error('Error retrieving products from Firebase: ' + error.message);
-    }
-  };
+  const { categoryId } = useParams()
 
   useEffect(() => {
-    setLoading(true);
+    const productosRef = collection(db, "productos")
+    const q = categoryId 
+                ? query(productosRef, where("category", "==", categoryId))
+                : productosRef
+    getDocs(q)
+        .then((resp) => {
+            const items = resp.docs.map((doc) => ({...doc.data(), id: doc.id}))
+            setProducts(items)
+        })
+        .catch(e => console.log(e))
+        .finally(() => setLoading(false))
 
-    asyncFunc(categoryId)
-      .then((response) => {
-        setProducts(response);
-        setLoading(false);
-      })
-      .catch((error) => {
-        console.error(error);
-        setLoading(false);
-      });
-  }, [categoryId]);
+}, [categoryId])
 
   return (
     <div>
